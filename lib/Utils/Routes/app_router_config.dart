@@ -6,7 +6,7 @@ class AppRouter {
     GoRoute(
       path: '/',
       builder: (context, state) {
-        return const Home();
+        return Home();
       },
     )
   ]);
