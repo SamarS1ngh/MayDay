@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppText extends StatelessWidget {
   final String text;
+  final double? size;
   final TextStyle textStyle;
   final Color color;
   final TextAlign textAlign;
@@ -12,6 +13,7 @@ class AppText extends StatelessWidget {
     super.key,
     required this.textStyle,
     required this.color,
+    this.size,
     this.textAlign = TextAlign.start,
     this.textOverflow,
   });
@@ -21,12 +23,14 @@ class AppText extends StatelessWidget {
     Key? key,
     required BuildContext context,
     Color? color,
+    double? size,
     TextAlign? textAlign,
     TextOverflow? textOverflow,
   }) =>
       AppText._internal(
         text,
         key: key,
+        size: size ?? 40,
         textStyle: AppTypography.main().bigTextDefault,
         color: color ?? AppColorsTheme.dark().textDefault,
         textAlign: textAlign ?? TextAlign.start,
@@ -38,6 +42,7 @@ class AppText extends StatelessWidget {
     Key? key,
     required BuildContext context,
     Color? color,
+    double? size,
     TextAlign? textAlign,
     TextOverflow? textOverflow,
   }) =>
@@ -45,13 +50,16 @@ class AppText extends StatelessWidget {
         text,
         key: key,
         textStyle: AppTypography.main().bigTextBold,
+        size: size ?? 40,
         color: color ?? AppColorsTheme.dark().textDefault,
         textAlign: textAlign ?? TextAlign.start,
         textOverflow: textOverflow,
       );
+
   factory AppText.defaultText(
     String text, {
     Key? key,
+    double? size,
     required BuildContext context,
     Color? color,
     TextAlign? textAlign,
@@ -61,6 +69,7 @@ class AppText extends StatelessWidget {
         text,
         key: key,
         textStyle: AppTypography.main().defaultText,
+        size: size ?? 24,
         color: color ?? AppColorsTheme.dark().textDefault,
         textAlign: textAlign ?? TextAlign.start,
         textOverflow: textOverflow,
@@ -69,6 +78,7 @@ class AppText extends StatelessWidget {
   factory AppText.defaultTextBold(
     String text, {
     Key? key,
+    double? size,
     required BuildContext context,
     Color? color,
     TextAlign? textAlign,
@@ -79,6 +89,7 @@ class AppText extends StatelessWidget {
         key: key,
         textStyle: AppTypography.main().defaultTextBold,
         color: color ?? AppColorsTheme.dark().textDefault,
+        size: size ?? 24,
         textAlign: textAlign ?? TextAlign.start,
         textOverflow: textOverflow,
       );
@@ -88,6 +99,7 @@ class AppText extends StatelessWidget {
     Key? key,
     required BuildContext context,
     Color? color,
+    double? size,
     TextAlign? textAlign,
     TextOverflow? textOverflow,
   }) =>
@@ -96,6 +108,7 @@ class AppText extends StatelessWidget {
         key: key,
         textStyle: AppTypography.main().subtitleDefault,
         color: color ?? AppColorsTheme.dark().textDefault,
+        size: size ?? 18,
         textAlign: textAlign ?? TextAlign.start,
         textOverflow: textOverflow,
       );
@@ -105,6 +118,7 @@ class AppText extends StatelessWidget {
     Key? key,
     required BuildContext context,
     Color? color,
+    double? size,
     TextAlign? textAlign,
     TextOverflow? textOverflow,
   }) =>
@@ -113,6 +127,7 @@ class AppText extends StatelessWidget {
         key: key,
         textStyle: AppTypography.main().subtitleDefaultBold,
         color: color ?? AppColorsTheme.dark().textDefault,
+        size: size ?? 18,
         textAlign: textAlign ?? TextAlign.start,
         textOverflow: textOverflow,
       );
@@ -122,7 +137,7 @@ class AppText extends StatelessWidget {
       text,
       textAlign: textAlign,
       overflow: textOverflow,
-      style: textStyle.copyWith(color: color),
+      style: textStyle.copyWith(color: color, fontSize: size),
     );
   }
 }

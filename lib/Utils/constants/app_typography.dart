@@ -19,16 +19,13 @@ class AppTypography extends ThemeExtension<AppTypography> {
 
   factory AppTypography.main() {
     return AppTypography._internal(
-        bigTextBold:
-            GoogleFonts.kanit(fontWeight: FontWeight.w600, fontSize: 22),
-        bigTextDefault: GoogleFonts.kanit(fontSize: 22),
-        defaultText: GoogleFonts.poppins(fontSize: 20),
-        defaultTextBold:
-            GoogleFonts.poppins(fontWeight: FontWeight.w500, fontSize: 20),
-        subtitleDefault:
-            GoogleFonts.montserrat(fontWeight: FontWeight.w400, fontSize: 14),
+        bigTextBold: GoogleFonts.kanit(fontWeight: FontWeight.w600),
+        bigTextDefault: GoogleFonts.kanit(),
+        defaultText: GoogleFonts.poppins(),
+        defaultTextBold: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+        subtitleDefault: GoogleFonts.montserrat(fontWeight: FontWeight.w400),
         subtitleDefaultBold:
-            GoogleFonts.montserrat(fontWeight: FontWeight.w500, fontSize: 14));
+            GoogleFonts.montserrat(fontWeight: FontWeight.w500));
   }
 
   @override

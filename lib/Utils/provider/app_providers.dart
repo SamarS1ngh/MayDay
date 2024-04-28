@@ -1,9 +1,6 @@
-import 'package:fluttemp/ViewModel/someClass_VM/someclass.dart';
-import 'package:provider/provider.dart';
-import 'package:provider/single_child_widget.dart';
+import 'package:contacts_service/contacts_service.dart';
+import 'package:fluttemp/ViewModel/someClass_VM/contact_vm.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AppProvider {
-  static List<SingleChildWidget> providers = [
-    ChangeNotifierProvider(create: (_) => SomeChangenotifierClass()),
-  ];
-}
+final contactProvider = StateNotifierProvider<ContactViewModel, List<Contact>>(
+    (ref) => ContactViewModel());

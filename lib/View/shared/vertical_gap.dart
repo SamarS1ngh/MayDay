@@ -9,11 +9,11 @@ class VerticalGap extends StatelessWidget {
   });
 
   factory VerticalGap.huge({Key? key}) =>
-      VerticalGap._internal(key: key, height: 32);
+      VerticalGap._internal(key: key, height: 60);
   factory VerticalGap.big({Key? key}) =>
-      VerticalGap._internal(key: key, height: 24);
+      VerticalGap._internal(key: key, height: 40);
   factory VerticalGap.medium({Key? key}) =>
-      VerticalGap._internal(key: key, height: 16);
+      VerticalGap._internal(key: key, height: 20);
   factory VerticalGap.small({Key? key}) =>
       VerticalGap._internal(key: key, height: 8);
   factory VerticalGap.tiny({Key? key}) =>

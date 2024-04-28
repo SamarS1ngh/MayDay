@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
   //reference colors
   static const Color _littleDarkBlue = Color(0XFF162c46);
+  static const Color _cyan = Color(0XFF40d4e7);
   static const Color _grey = Color(0xFF9E9E9E);
   static const Color _red = Color(0XFFB00020);
   static const Color _green = Color(0XFF00C853);
@@ -11,6 +12,7 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
 
   //actual colors to be used throughout the app
   final Color bgColor;
+  final Color highlight;
   final Color bgInput;
   final Color snackbarValidation;
   final Color snackBarFailure;
@@ -19,6 +21,7 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
   // private constructor (use factories below instead):
   const AppColorsTheme._internal({
     required this.bgColor,
+    required this.highlight,
     required this.bgInput,
     required this.snackbarValidation,
     required this.snackBarFailure,
@@ -29,6 +32,7 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
   factory AppColorsTheme.dark() {
     return const AppColorsTheme._internal(
         bgColor: _darkBlue,
+        highlight: _cyan,
         bgInput: _littleDarkBlue,
         snackbarValidation: _green,
         snackBarFailure: _red,
