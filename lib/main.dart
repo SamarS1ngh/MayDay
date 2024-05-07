@@ -3,6 +3,7 @@ import 'package:fluttemp/Utils/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +11,11 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
+  Supabase.initialize(
+      url: 'https://eduqgmxtuefnnxzqnqym.supabase.co',
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkdXFnbXh0dWVmbm54enFucXltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1ODY3MDMsImV4cCI6MjAzMDE2MjcwM30.eMA4Dk9cQLJZcq3UL3l0aFqAvd6xRSbiR7ygxKJmO18');
   runApp(const ProviderScope(child: MyApp()));
 }
 

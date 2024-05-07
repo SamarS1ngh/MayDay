@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:contacts_service/contacts_service.dart';
 import 'package:fluttemp/Utils/constants/app_constants.dart';
 import 'package:fluttemp/Utils/provider/app_providers.dart';

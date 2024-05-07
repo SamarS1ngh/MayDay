@@ -13,9 +13,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 class Home extends ConsumerWidget {
   Home({super.key});
 
-  List<Contact> contacts = [];
   final AppColorsTheme _appColorsTheme = AppColorsTheme.dark();
-  bool isLoadingContacts = true;
 
   _scaffoldCtrller(BuildContext context) {
     ScaffoldMessenger.of(context)
