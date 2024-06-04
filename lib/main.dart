@@ -1,21 +1,20 @@
-import 'package:fluttemp/Utils/Routes/app_router_config.dart';
-import 'package:fluttemp/Utils/constants/app_constants.dart';
+import 'package:mayday/Utils/Routes/app_router_config.dart';
+import 'package:mayday/Utils/data/local/local_storage_service.dart';
+import 'package:mayday/core/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:mayday/firebase_options.dart';
 
-void main() {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-
-  Supabase.initialize(
-      url: 'https://eduqgmxtuefnnxzqnqym.supabase.co',
-      anonKey:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVkdXFnbXh0dWVmbm54enFucXltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ1ODY3MDMsImV4cCI6MjAzMDE2MjcwM30.eMA4Dk9cQLJZcq3UL3l0aFqAvd6xRSbiR7ygxKJmO18');
+  await LocalStorageService.init();
   runApp(const ProviderScope(child: MyApp()));
 }
 

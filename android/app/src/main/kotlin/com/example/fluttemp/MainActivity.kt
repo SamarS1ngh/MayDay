@@ -1,4 +1,4 @@
-package com.example.fluttemp
+package com.example.mayday
 
 import io.flutter.embedding.android.FlutterActivity
 
